@@ -1,8 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.image as img
-
-
 
 def normalize_data(image):
     return image/255

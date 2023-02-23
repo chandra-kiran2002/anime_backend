@@ -3,3 +3,4 @@ matplotlib
 Flask
 Pillow
 gunicorn
+flask_cors
