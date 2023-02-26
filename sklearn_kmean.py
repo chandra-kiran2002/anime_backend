@@ -1,13 +1,12 @@
 from sklearn.cluster import KMeans
 import numpy
+import matplotlib.pyplot as plt
 
 def change_image(k,image):
-    shape = image.size
+    shape = image.shape
     image = image.reshape(shape[0] * shape[1], 3)
-    # print("--------------------------------------")
-    # print(image)
     km = KMeans(
-        n_clusters=5, init='random'
+        n_clusters=k, init='random'
     )
     y_km = km.fit_predict(image)
     ans = []
@@ -19,14 +18,15 @@ def change_image(k,image):
     print(colors)
 
     cnt = 0
-    for i in range(shape[1]):
+    for i in range(shape[0]):
         ans.append([])
-        for j in range(shape[0]):
+        for j in range(shape[1]):
             ans[i].append(km.cluster_centers_[y_km[cnt]])
             cnt += 1
     ans = numpy.array(ans)
     ans = ans.astype('int64')
 
     print(ans.shape)
-
-    return image
+    plt.imshow(ans)
+    plt.show()
+    return ans
