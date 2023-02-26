@@ -1,4 +1,7 @@
 import numpy as np
+# from PIL import Image
+# import matplotlib.pyplot as plt
+# import numpy
 
 def normalize_data(image):
     return image/255
@@ -77,10 +80,15 @@ def fun(k,image):
         for j in range(clusters.shape[1]):
             image[i][j] = centroids[clusters[i][j]]
     # image = image.astype('int64')
-    # print(image)
     # plt.imshow(image)
     # plt.show()
     return image
+# image = Image.open(r"C:\Users\jinka\Downloads\WhatsApp Image 2023-02-23 at 09.26.06.jpg")
+# image = image.convert('RGB')
+# image.thumbnail((300,300))
+# image = numpy.asarray(image)
+# print(image.size)
+# fun(2,image)
 
 
 
